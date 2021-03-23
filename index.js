@@ -14,9 +14,16 @@
 */
 
 function processFirstItem(stringList, callback) {
-  return callback(stringList[0])
+  return callback(stringList[0]); //this line will see foofoo
 }
+
 console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
+
+function addStrings(str){
+  return str+str;
+}
+
+console.log(processFirstItem(['foo','bar'], addStrings));
 
 // ⭐️ Example Challenge END ⭐️
 
@@ -28,11 +35,12 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   Study the code for counter1 and counter2, then answer the questions below.
   
   1. What is the difference between counter1 and counter2?
-  
+  Counter 1 is going to get back this closure and its not dealing with globally and its doing eveyrhting locally in function scope vs counter 2 is dealing with global variables so the count here is not private and can be accessed anywhere else 
   2. Which of the two uses a closure? How can you tell?
-  
+  counter 1
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
+     counter 1 code would be preferable if were making several counters.
 */
 
 // counter1 code
@@ -62,8 +70,8 @@ Use the inning function below to do the following:
 NOTE: This will be a callback function for the tasks below
 */
 
-function inning(/*Code Here*/){
-    /*Code Here*/
+function inning(num1, num2){
+    console.log(add(1,2));
 }
 
 
@@ -81,17 +89,20 @@ Use the finalScore function below to do the following:
 }
 */ 
 
-function finalScore(/*code Here*/){
-  /*Code Here*/
+function finalScore(inning,9){
+  let finalScore = 0;
+  finalScore = finalScore +1;
+  return finalScore;
 }
+console.log(finalScore());
 
 /* ⚾️⚾️⚾️ Task 4: getInningScore() ⚾️⚾️⚾️
 Use the getInningScore() function below to do the following:
   1. Receive a callback function - you will pass in the inning function from task 2 as your argument 
   2. Return an object with a score for home and a score for away that populates from invoking the inning callback function */
 
-function getInningScore(/*Your Code Here */) {
-  /*Your Code Here */
+function getInningScore(home, away) {
+ return getInningScore;
 }
 
 
@@ -136,8 +147,12 @@ Use the scoreboard function below to do the following:
 ]  
   */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard (getInningScore,inning, 9) {
+  let score = 0;
+  return function win(){
+    score++;
+
+  }
 }
 
 
